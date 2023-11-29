@@ -60,33 +60,69 @@
             }
         }
 
-        .loader {
-            font-size: 100px;
-            color: red;
-            background-color: yellow;
+        .load {
+            font-size: 40px;
+            width: 100%;
             height: 100vh;
+            background-color: coral;
             position: fixed;
-            top: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
+        }
 
+        .loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* background-color: burlywood; */
+            width: 120px;
+            height: 120px;
+
+            margin: -76px 0 0 -76px;
+            border: 16px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 16px solid #3498db;
+            -webkit-animation: spin 2s linear infinite;
+            animation: spin 2s linear infinite;
         }
 
         .none {
             display: none;
+            /* display: block; */
         }
 
         .overflow_hidden {
             overflow: hidden;
+        }
+
+        @-webkit-keyframes spin {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
 
 <body class="overflow-hidden">
 
-    <div id="pre_load" class="loader"> Loading....</div>
+    <div class="load " id="pre_load">
+        <div class="loader "></div>
+    </div>
     <nav>
         <div class="container">
             <div class="d-flex justify-content-between align-items-center">
@@ -204,6 +240,7 @@
         with all the
         digital markets available in the Solana NFT world for getting our collection successfully listed.
     </div>
+
     <script>
         function openNav() {
             document.getElementById("nav_btn").classList.toggle("start-0")
